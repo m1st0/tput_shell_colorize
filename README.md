@@ -15,41 +15,44 @@ A small, dependency-free shell utility for consistent terminal message formattin
 - Uses `printf` for predictable shell output
 - No external library dependencies
 
-## Direct Usage
+## Setup and Usage
 
 Source the utility from your shell script:
 
-```bash
-. path/to/tput_shell_colorize.sh
-```
+  ```bash
+  . path/to/tput_shell_colorize.sh
+  ```
 
 For example, if installed as the recommended submodule shown below:
 
-```bash
-. vendor/tput_shell_colorize/tput_shell_colorize.sh
-```
+  ```bash
+  . vendor/tput_shell_colorize/tput_shell_colorize.sh
+  ```
 
 Then use the provided functions. Messages automatically produce a complete line. When color is unavailable, the same messages are printed without color.
 
 ## Git Submodule Setup
 
-This project can be included as a Git submodule in other projects:
+- If desired as a submodule:
 
-```bash
-git submodule add https://github.com/m1st0/tput_shell_colorize.git vendor/tput_shell_colorize
-```
+    ```bash
+    git submodule add https://github.com/m1st0/tput_shell_colorize.git vendor/tput_shell_colorize
+    git add .gitmodules vendor/tput_shell_colorize
+    ```
 
-After cloning a project that uses this repository as a submodule:
+    Commit as necessary.
 
-```bash
-git clone --recurse-submodules <repository>
-```
+- If cloning a project that uses this repo as a submodule:
 
-If the project was already cloned without its submodules:
+    ```bash
+    git clone --recurse-submodules <parent repository>
+    ```
 
-```bash
-git submodule update --init --recursive
-```
+- If the project was already cloned without its submodules in the parent repo:
+
+    ```bash
+    git submodule update --init --recursive
+    ```
 
 ## Functions
 
@@ -57,25 +60,25 @@ git submodule update --init --recursive
 
 Prints a standard message using the configured standard message color.
 
-```bash
-messenger_std "Checking for updates..."
-```
+  ```bash
+  messenger_std "Checking for updates..."
+  ```
 
 ### messenger_end
 
 Prints an ending or completion message using the configured ending color.
 
-```bash
-messenger_end "Update complete."
-```
+  ```bash
+  messenger_end "Update complete."
+  ```
 
 ### linefeed
 
 Prints a blank line.
 
-```bash
-linefeed
-```
+  ```bash
+  linefeed
+  ```
 
 ## Requirements
 
@@ -89,7 +92,7 @@ Copyright © 2017–2026 Maulik Mistry
 
 This project is licensed under Apache License 2.0. See the [LICENSE.txt](LICENSE.txt) file for details.
 
-# Support
+## Support
 
 If you find this project useful and would like to support me, consider donating: 
 - [PayPal](https://www.paypal.com/paypalme/m1st0)
