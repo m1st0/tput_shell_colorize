@@ -35,7 +35,7 @@ if [ -t 1 ] && command -v tput >/dev/null 2>&1; then
 fi
 
 linefeed() {
-  printf '\n'
+  printf '\r\n'
 }
 
 messenger_std() {
