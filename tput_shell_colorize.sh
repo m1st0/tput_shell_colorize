@@ -42,6 +42,10 @@ messenger_std() {
     printf '%s%s%s\n' "$YELLOW" "$*" "$RESET"
 }
 
+messenger_std_inline() {
+    printf '%s%s%s' "$YELLOW" "$*" "$RESET"
+}
+
 messenger_end() {
     printf '%s%s%s\n' "$RED" "$*" "$RESET"
 }
