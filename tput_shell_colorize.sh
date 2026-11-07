@@ -6,6 +6,12 @@
 # Author: Maulik Mistry
 # Please share support: https://www.paypal.com/paypalme/m1st0
 #                       https://venmo.com/code?user_id=3319592654995456106&created=1753283702
+#
+# Color names (RED, GREEN, ...) are ANSI palette slots 1-7, not guaranteed hues:
+# many terminal themes remap them. Scripts should prefer the semantic names,
+# which say what a color means and follow whatever the theme does with the slot:
+#   COLOR_SUCCESS (slot 2)  COLOR_WARNING (slot 3)  COLOR_ERROR (slot 1)
+#   COLOR_INFO    (slot 6)  COLOR_RESET
 
 
 # Fallback
@@ -19,9 +25,14 @@ BLUE=''
 MAGENTA=''
 CYAN=''
 WHITE=''
+COLOR_SUCCESS=''
+COLOR_WARNING=''
+COLOR_ERROR=''
+COLOR_INFO=''
+COLOR_RESET=''
 
 # If tput is available and TERM is set properly.
-if [ -t 1 ] && command -v tput >/dev/null 2>&1; then    
+if [ -t 1 ] && command -v tput >/dev/null 2>&1; then
     RESET="$(tput sgr0 2>/dev/null)"
     BOLD="$(tput bold 2>/dev/null)"
     BLACK="$(tput setaf 0 2>/dev/null)"
@@ -32,6 +43,13 @@ if [ -t 1 ] && command -v tput >/dev/null 2>&1; then
     MAGENTA="$(tput setaf 5 2>/dev/null)"
     CYAN="$(tput setaf 6 2>/dev/null)"
     WHITE="$(tput setaf 7 2>/dev/null)"
+
+    # Semantic names, derived from the slots above so there is one source.
+    COLOR_SUCCESS="$GREEN"
+    COLOR_WARNING="$YELLOW"
+    COLOR_ERROR="$RED"
+    COLOR_INFO="$CYAN"
+    COLOR_RESET="$RESET"
 fi
 
 linefeed() {
@@ -49,4 +67,3 @@ messenger_std_inline() {
 messenger_end() {
     printf '%s%s%s\n' "$RED" "$*" "$RESET"
 }
-
