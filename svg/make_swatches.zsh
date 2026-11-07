@@ -2,6 +2,10 @@
 # SPDX-FileCopyrightText: Copyright (c) 2017-2026 Maulik Mistry
 # SPDX-License-Identifier: Apache-2.0
 #
+# Author: Maulik Mistry
+# Please share support: https://www.paypal.com/paypalme/m1st0
+#                       https://venmo.com/code?user_id=3319592654995456106&created=1753283702
+#
 # make_swatches.zsh - writes one SVG color swatch per palette slot next to this
 # script and prints the README table that shows them.
 #

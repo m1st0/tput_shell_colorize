@@ -14,6 +14,7 @@
 #   COLOR_INFO    (slot 6)  COLOR_RESET
 # See the README, "Example Colors", for one theme's values.
 
+
 # Fallback
 RESET=''
 BOLD=''
