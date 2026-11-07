@@ -7,12 +7,12 @@
 # Please share support: https://www.paypal.com/paypalme/m1st0
 #                       https://venmo.com/code?user_id=3319592654995456106&created=1753283702
 #
-# Color names (RED, GREEN, ...) are ANSI palette slots 1-7, not guaranteed hues:
+# Color names (RED, GREEN, ...) are ANSI palette slots 0-7, not guaranteed hues:
 # many terminal themes remap them. Scripts should prefer the semantic names,
 # which say what a color means and follow whatever the theme does with the slot:
 #   COLOR_SUCCESS (slot 2)  COLOR_WARNING (slot 3)  COLOR_ERROR (slot 1)
 #   COLOR_INFO    (slot 6)  COLOR_RESET
-
+# See the README, "Example Colors", for one theme's values.
 
 # Fallback
 RESET=''
